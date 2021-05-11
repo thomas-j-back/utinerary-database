@@ -10,6 +10,7 @@ CREATE TABLE app_user (
      first_name VARCHAR(100) NOT NULL,
      last_name  VARCHAR(100) NOT NULL,
      email      VARCHAR(100) NOT NULL,
+     password TEXT NOT NULL,
      PRIMARY KEY(user_id)
 
 );
