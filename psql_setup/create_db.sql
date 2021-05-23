@@ -1,0 +1,6 @@
+BEGIN;
+
+CREATE DATABASE utinerary;
+
+
+
