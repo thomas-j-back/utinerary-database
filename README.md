@@ -18,7 +18,7 @@ This will execute the database creation. Verify there are no errors
 
 run the command:
 
-> docker build -t [image_name]:[tag_name]
+> docker build -t [image_name]:[tag_name] .
 
 In this repository after cloning.
 
