@@ -16,8 +16,10 @@ This will execute the database creation. Verify there are no errors
 
 ## Setup w/Docker
 
-- run the command:
-  > docker build -t [image_name]:[tag_name]
-  > In this repository after cloning.
+run the command:
+
+> docker build -t [image_name]:[tag_name]
+
+In this repository after cloning.
 
 Image and tag name meant to delinate the purpose of container, such as dev or production environments
