@@ -26,9 +26,9 @@ RUN psql --command "CREATE USER utin_admin WITH ENCRYPTED PASSWORD 'utin2020';" 
     createdb -O utin_admin utinerary
 
 
-RUN psql --command "CREATE DATABASE utinerary;
-CREATE USER utin_admin WITH ENCRYPTED PASSWORD 'utin2020'; 
-GRANT ALL ON DATABASE utinerary TO utin_admin;"
+RUN psql --command "CREATE DATABASE utinerary;"
+RUN psql --command "CREATE USER utin_admin WITH ENCRYPTED PASSWORD 'utin2020';"
+RUN psql --command  "GRANT ALL ON DATABASE utinerary TO utin_admin;"
 
 
 CMD ["echo","Image created and utin db setup copied over"]
