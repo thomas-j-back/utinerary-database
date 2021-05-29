@@ -1,6 +1,7 @@
 BEGIN;
 
 CREATE DATABASE utinerary;
-
+CREATE USER utin_admin WITH ENCRYPTED PASSWORD 'utin2020';
+GRANT ALL ON DATABASE utinerary TO utin_admin;
 
 
