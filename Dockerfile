@@ -1,19 +1,21 @@
 #syntax=docker/dockerfile:1
-FROM ubuntu 
+FROM ubuntu16.04
 MAINTAINER thomas.johan.back@gmail.com
 
-RUN apt-get update && apt-get install -y gnupg2
+RUN apt-get update -y
 
 # Add the PostgreSQL PGP key to verify their Debian packages.
 # It should be the same key as https://www.postgresql.org/media/keys/ACCC4CF8.asc
 #RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
-RUN apt-get install wget ca-certificates -y
+RUN apt-get install curl ca-certificates gnupg -y
+RUN curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
+RUN touch /etc/apt/sources.list.d/pgdg.list
+#RUN deb http://apt.postgresql.org/pub/repos/apt buster-pgdg main
 
-RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 
 # Add PostgreSQL's repository. It contains the most recent stable release
 #  of PostgreSQL.
-RUN sh -c 'echo "deb https://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
+RUN sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 
 # Install ``python-software-properties``, ``software-properties-common`` and PostgreSQL 9.3
 #  There are some warnings (in red) that show up during the build. You can hide
