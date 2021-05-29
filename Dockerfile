@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y gnupg2
 #RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
 RUN apt-get install wget ca-certificates -y
 
-RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 
 # Add PostgreSQL's repository. It contains the most recent stable release
 #  of PostgreSQL.
