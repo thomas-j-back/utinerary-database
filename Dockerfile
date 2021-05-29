@@ -1,5 +1,5 @@
 #syntax=docker/dockerfile:1
-FROM ubuntu16.04
+FROM ubuntu
 MAINTAINER thomas.johan.back@gmail.com
 
 RUN apt-get update -y
