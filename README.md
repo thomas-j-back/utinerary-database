@@ -23,3 +23,9 @@ run the command:
 In this repository after cloning.
 
 Image and tag name meant to delinate the purpose of container, such as dev or production environments
+
+Once created successfully run command:
+
+> docker run --rm -P --name [container_name] [image_name:tag_name]
+
+This will create a container you can link to
